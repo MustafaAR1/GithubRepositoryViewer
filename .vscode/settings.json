@@ -1,3 +1,10 @@
 {
-  "files.exclude": {}
+  "files.exclude": {
+    "lib\\github\\domain\\github_failure.freezed.dart": true,
+    "lib\\github\\domain\\github_repo.freezed.dart": true,
+    "lib\\github\\domain\\user.freezed.dart": true,
+    "lib\\github\\core\\infrastructure\\user_dto.freezed.dart": true,
+    "lib\\core\\infrastructure\\remote_response.freezed.dart": true,
+    "lib\\github\\core\\infrastructure\\github_repo_dto.freezed.dart": true
+  }
 }

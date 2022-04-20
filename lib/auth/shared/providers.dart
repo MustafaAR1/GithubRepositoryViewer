@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:repo_viewer/auth/application/auth_notifier.dart';
 import 'package:repo_viewer/auth/infrastructure/credential_storage/credential_storage.dart';
 import 'package:repo_viewer/auth/infrastructure/credential_storage/secure_credential_storage.dart';
 import 'package:repo_viewer/auth/infrastructure/github_authenticator.dart';
@@ -19,4 +20,7 @@ final githubAuthenticatorProvider = Provider(
     ref.watch(credentialStorageProvider),
     ref.watch(dioProvider),
   ),
+);
+final authNotifierProvider = StateNotifierProvider<AuthNotifier, AuthState>(
+  (ref) => AuthNotifier(ref.watch(githubAuthenticatorProvider)),
 );
